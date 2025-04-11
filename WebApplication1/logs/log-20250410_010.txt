@@ -1,0 +1,76 @@
+2025-04-10 13:28:35.042 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 13:28:35.238 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 13:28:35.244 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 13:28:41.664 -04:00 [INF] AJAX search request: searchString=lap, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:41.681 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:42.642 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:42.646 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:43.940 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:43.944 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:43.948 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:43.951 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:44.441 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:44.444 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:45.326 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:45.330 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:45.334 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:45.337 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:46.257 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:46.261 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:46.265 -04:00 [INF] AJAX search request: searchString=laptop, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:46.268 -04:00 [INF] AJAX search returned 0 products
+2025-04-10 13:28:48.939 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:48.948 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:28:49.620 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:49.624 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:28:49.637 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:49.640 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:28:50.135 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:28:50.138 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:29:24.491 -04:00 [INF] AJAX search request: searchString=, categoryId=1, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:24.497 -04:00 [INF] AJAX search returned 3 products
+2025-04-10 13:29:24.503 -04:00 [INF] AJAX search request: searchString=, categoryId=1, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:24.505 -04:00 [INF] AJAX search returned 3 products
+2025-04-10 13:29:24.998 -04:00 [INF] AJAX search request: searchString=, categoryId=1, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:25.000 -04:00 [INF] AJAX search returned 3 products
+2025-04-10 13:29:26.732 -04:00 [INF] AJAX search request: searchString=, categoryId=3, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:26.735 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:26.739 -04:00 [INF] AJAX search request: searchString=, categoryId=3, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:26.742 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:27.233 -04:00 [INF] AJAX search request: searchString=, categoryId=3, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:27.235 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:28.777 -04:00 [INF] AJAX search request: searchString=, categoryId=4, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:28.779 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:28.783 -04:00 [INF] AJAX search request: searchString=, categoryId=4, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:28.785 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:29.285 -04:00 [INF] AJAX search request: searchString=, categoryId=4, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:29.288 -04:00 [INF] AJAX search returned 1 products
+2025-04-10 13:29:31.299 -04:00 [INF] AJAX search request: searchString=, categoryId=2, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:31.302 -04:00 [INF] AJAX search returned 2 products
+2025-04-10 13:29:31.307 -04:00 [INF] AJAX search request: searchString=, categoryId=2, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:31.309 -04:00 [INF] AJAX search returned 2 products
+2025-04-10 13:29:31.812 -04:00 [INF] AJAX search request: searchString=, categoryId=2, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:31.814 -04:00 [INF] AJAX search returned 2 products
+2025-04-10 13:29:33.828 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:33.831 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:29:33.841 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:33.843 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:29:34.331 -04:00 [INF] AJAX search request: searchString=, categoryId=, minPrice=, maxPrice=, lowStock=
+2025-04-10 13:29:34.333 -04:00 [INF] AJAX search returned 7 products
+2025-04-10 13:29:56.071 -04:00 [INF] User logged out.
+2025-04-10 17:50:18.713 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 17:50:18.894 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 17:50:18.898 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 17:50:22.504 -04:00 [INF] User logged out.
+2025-04-10 17:50:28.504 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-10 17:50:28.579 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-10 17:50:28.584 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-10 17:50:30.858 -04:00 [INF] User logged out.
+2025-04-10 17:51:00.157 -04:00 [INF] Attempting to register user with email: eternal.venom2003@yahoo.com
+2025-04-10 17:51:00.407 -04:00 [INF] User eternal.venom2003@yahoo.com created successfully.
+2025-04-10 17:51:00.482 -04:00 [INF] User eternal.venom2003@yahoo.com assigned to RegularUser role.
+2025-04-10 17:51:00.487 -04:00 [INF] User eternal.venom2003@yahoo.com automatically signed in after registration.
+2025-04-10 17:51:04.351 -04:00 [INF] User logged out.
+2025-04-10 17:51:21.697 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 17:51:21.769 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 17:51:21.774 -04:00 [INF] User admin@example.com has Admin role: True

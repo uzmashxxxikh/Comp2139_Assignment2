@@ -1,0 +1,18 @@
+2025-04-11 14:21:42.057 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-11 14:21:42.242 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-11 14:21:42.246 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-11 14:21:46.986 -04:00 [INF] User logged out.
+2025-04-11 14:22:26.668 -04:00 [INF] Attempting to register user with email: venomfate81@yahoo.com
+2025-04-11 14:22:26.846 -04:00 [INF] User venomfate81@yahoo.com created successfully.
+2025-04-11 14:22:26.905 -04:00 [INF] User venomfate81@yahoo.com assigned to RegularUser role.
+2025-04-11 14:22:27.492 -04:00 [ERR] Error sending email to venomfate81@yahoo.com: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at WebApplication1.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\Services\EmailService.cs:line 68
+2025-04-11 14:22:27.506 -04:00 [ERR] Failed to send confirmation email to venomfate81@yahoo.com.

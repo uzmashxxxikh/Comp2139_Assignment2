@@ -1,0 +1,10 @@
+2025-04-10 11:13:20.746 -04:00 [INF] Creating new product: ads
+2025-04-10 11:13:20.814 -04:00 [WRN] Invalid model state when creating product: ads
+2025-04-10 11:13:20.816 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:13:21.925 -04:00 [INF] Creating new product: ads
+2025-04-10 11:13:21.927 -04:00 [WRN] Invalid model state when creating product: ads
+2025-04-10 11:13:21.929 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:47:33.167 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 11:47:33.372 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 11:47:33.377 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 11:47:37.298 -04:00 [INF] User logged out.

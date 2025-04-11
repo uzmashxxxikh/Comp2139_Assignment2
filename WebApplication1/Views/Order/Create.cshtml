@@ -1,0 +1,146 @@
+@model WebApplication1.Models.Order
+
+@{
+    ViewData["Title"] = "Create Order";
+}
+
+<h1>Create Order</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" id="orderForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Guest Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group mb-3">
+                        <label asp-for="GuestName" class="control-label"></label>
+                        <input asp-for="GuestName" class="form-control" />
+                        <span asp-validation-for="GuestName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="GuestEmail" class="control-label"></label>
+                        <input asp-for="GuestEmail" class="form-control" />
+                        <span asp-validation-for="GuestEmail" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Order Items</h5>
+                </div>
+                <div class="card-body">
+                    <div id="orderItems">
+                        <div class="order-item mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="OrderItems[0].ProductId" class="form-select product-select" required>
+                                        <option value="">Select Product</option>
+                                        @foreach (var product in ViewBag.Products)
+                                        {
+                                            <option value="@product.Id" data-price="@product.Price">@product.Name - $@product.Price</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" name="OrderItems[0].Quantity" class="form-control quantity-input" 
+                                           min="1" value="1" required />
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-danger remove-item">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addItem" class="btn btn-secondary">Add Item</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create Order</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Success Alert (hidden by default) -->
+<div class="alert alert-success alert-dismissible fade" role="alert" id="successAlert" style="display: none;">
+    <strong>Success!</strong> Your order has been created successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            let itemCount = 1;
+
+            // Add new order item
+            $('#addItem').click(function () {
+                const template = `
+                    <div class="order-item mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select name="OrderItems[${itemCount}].ProductId" class="form-select product-select" required>
+                                    <option value="">Select Product</option>
+                                    @foreach (var product in ViewBag.Products)
+                                    {
+                                        <option value="@product.Id" data-price="@product.Price">@product.Name - $@product.Price</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" name="OrderItems[${itemCount}].Quantity" class="form-control quantity-input" 
+                                       min="1" value="1" required />
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger remove-item">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                $('#orderItems').append(template);
+                itemCount++;
+            });
+
+            // Remove order item
+            $(document).on('click', '.remove-item', function () {
+                $(this).closest('.order-item').remove();
+            });
+
+            // Handle form submission
+            $('#orderForm').submit(function (e) {
+                e.preventDefault();
+                
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        if (result.success) {
+                            // Show success message
+                            $('#successAlert').fadeIn();
+                            
+                            // Redirect to track order page after 2 seconds
+                            setTimeout(function () {
+                                window.location.href = '/Order/Track/' + result.orderId;
+                            }, 2000);
+                        } else {
+                            // Show error message
+                            alert(result.message || 'An error occurred while creating the order.');
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while creating the order.');
+                    }
+                });
+            });
+        });
+    </script>
+} 

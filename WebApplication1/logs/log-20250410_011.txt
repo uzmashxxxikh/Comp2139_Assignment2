@@ -1,0 +1,17 @@
+2025-04-10 17:50:18.713 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 17:50:18.894 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 17:50:18.898 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 17:50:22.504 -04:00 [INF] User logged out.
+2025-04-10 17:50:28.504 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-10 17:50:28.579 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-10 17:50:28.584 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-10 17:50:30.858 -04:00 [INF] User logged out.
+2025-04-10 17:51:00.157 -04:00 [INF] Attempting to register user with email: eternal.venom2003@yahoo.com
+2025-04-10 17:51:00.407 -04:00 [INF] User eternal.venom2003@yahoo.com created successfully.
+2025-04-10 17:51:00.482 -04:00 [INF] User eternal.venom2003@yahoo.com assigned to RegularUser role.
+2025-04-10 17:51:00.487 -04:00 [INF] User eternal.venom2003@yahoo.com automatically signed in after registration.
+2025-04-10 17:51:04.351 -04:00 [INF] User logged out.
+2025-04-10 17:51:21.697 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 17:51:21.769 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 17:51:21.774 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 17:59:57.214 -04:00 [INF] User logged out.

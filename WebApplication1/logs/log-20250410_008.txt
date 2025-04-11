@@ -1,0 +1,6 @@
+2025-04-10 13:16:00.257 -04:00 [INF] Creating new product: AirPods
+2025-04-10 13:16:00.545 -04:00 [INF] Product created successfully: AirPods, ID: 7
+2025-04-10 13:21:22.913 -04:00 [INF] Creating new product: phone
+2025-04-10 13:21:23.214 -04:00 [INF] Product created successfully: phone, ID: 8
+2025-04-10 13:21:31.574 -04:00 [INF] Deleting product with ID: 8
+2025-04-10 13:21:31.606 -04:00 [INF] Product deleted successfully: phone, ID: 8

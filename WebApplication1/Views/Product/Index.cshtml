@@ -1,0 +1,156 @@
+@model IEnumerable<WebApplication1.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus me-1"></i>Create New
+        </a>
+    </p>
+}
+
+<!-- Search Alert (hidden by default) -->
+<div id="searchAlert" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 d-none" role="alert" style="z-index: 1050;">
+    <strong>Error!</strong> <span id="searchErrorMessage"></span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form id="searchForm" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Search</label>
+                <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Product name..." />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select name="categoryId" class="form-select">
+                    <option value="">All Categories</option>
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        <option value="@category.Id" selected="@(ViewBag.CategoryId == category.Id)">@category.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Min Price</label>
+                <input type="number" name="minPrice" value="@ViewBag.MinPrice" class="form-control" step="0.01" min="0" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Max Price</label>
+                <input type="number" name="maxPrice" value="@ViewBag.MaxPrice" class="form-control" step="0.01" min="0" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Stock Status</label>
+                <select name="lowStock" class="form-select">
+                    <option value="">All</option>
+                    <option value="true" selected="@(ViewBag.LowStock == true)">Low Stock</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search me-1"></i>Search
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt me-1"></i>Reset
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Search Loading Spinner -->
+<div id="searchSpinner" class="text-center mb-3 d-none">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<!-- No Results Message (hidden by default) -->
+<div id="noResultsMessage" class="alert alert-info text-center d-none">
+    No products found matching your search criteria.
+</div>
+
+<div id="productList">
+    <partial name="_ProductList" model="Model" />
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            let searchTimeout;
+            const searchDelay = 500; // Delay in milliseconds
+
+            function showSearchError(message) {
+                $('#searchErrorMessage').text(message);
+                $('#searchAlert').removeClass('d-none');
+                setTimeout(function() {
+                    $('#searchAlert').addClass('d-none');
+                }, 5000);
+            }
+
+            function performSearch() {
+                // Show loading spinner
+                $('#searchSpinner').removeClass('d-none');
+                $('#noResultsMessage').addClass('d-none');
+                
+                // Get form data
+                var formData = $('#searchForm').serialize();
+                
+                // Submit form via AJAX
+                $.ajax({
+                    url: '/Product/Search',
+                    type: 'GET',
+                    data: formData,
+                    success: function(result) {
+                        // Hide loading spinner
+                        $('#searchSpinner').addClass('d-none');
+                        
+                        // Update product list
+                        $('#productList').html(result);
+                        
+                        // Show no results message if no products found
+                        if ($('#productList table tbody tr').length === 0) {
+                            $('#noResultsMessage').removeClass('d-none');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Hide loading spinner
+                        $('#searchSpinner').addClass('d-none');
+                        
+                        // Show error message
+                        showSearchError('An error occurred while searching for products. Please try again.');
+                    }
+                });
+            }
+
+            // Handle form submission
+            $('#searchForm').on('submit', function(e) {
+                e.preventDefault();
+                performSearch();
+            });
+            
+            // Handle input changes with debounce
+            $('#searchForm input, #searchForm select').on('input change', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(function() {
+                    performSearch();
+                }, searchDelay);
+            });
+
+            // Validate price inputs
+            $('input[name="minPrice"], input[name="maxPrice"]').on('input', function() {
+                const value = $(this).val();
+                if (value < 0) {
+                    $(this).val(0);
+                }
+            });
+        });
+    </script>
+} 

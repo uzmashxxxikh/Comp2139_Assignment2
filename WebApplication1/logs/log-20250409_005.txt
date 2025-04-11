@@ -1,0 +1,47 @@
+2025-04-09 21:10:19.731 -04:00 [INF] Attempting to register user with email: arshiamoradi1203@gmail.com
+2025-04-09 21:10:20.007 -04:00 [ERR] Failed to create user arshiamoradi1203@gmail.com:
+2025-04-09 21:10:20.009 -04:00 [ERR] - Username 'arshiamoradi1203@gmail.com' is already taken.
+2025-04-09 21:10:24.085 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-09 21:10:24.100 -04:00 [WRN] Invalid login attempt for user arshiamoradi1203@gmail.com.
+2025-04-09 21:11:24.660 -04:00 [INF] Attempting to register user with email: arshya_moradi81@yahoo.com
+2025-04-09 21:11:24.662 -04:00 [ERR] Failed to create user arshya_moradi81@yahoo.com:
+2025-04-09 21:11:24.664 -04:00 [ERR] - Passwords must have at least one non alphanumeric character.
+2025-04-09 21:11:44.466 -04:00 [INF] Attempting to register user with email: arshya_moradi81@yahoo.com
+2025-04-09 21:11:44.775 -04:00 [INF] User arshya_moradi81@yahoo.com created successfully.
+2025-04-09 21:11:44.849 -04:00 [INF] User arshya_moradi81@yahoo.com assigned to RegularUser role.
+2025-04-09 21:11:45.364 -04:00 [ERR] Error sending email to arshya_moradi81@yahoo.com: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at WebApplication1.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Comp2139_Assignment\WebApplication1\WebApplication1\Services\EmailService.cs:line 68
+2025-04-09 21:11:45.389 -04:00 [WRN] Failed to send confirmation email to arshya_moradi81@yahoo.com.
+2025-04-09 21:11:57.614 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-09 21:11:57.617 -04:00 [WRN] Invalid login attempt for user arshiamoradi1203@gmail.com.
+2025-04-09 21:12:10.023 -04:00 [INF] Login attempt for user: arshya_moradi81@yahoo.com
+2025-04-09 21:12:10.027 -04:00 [WRN] Invalid login attempt for user arshya_moradi81@yahoo.com.
+2025-04-09 21:13:13.480 -04:00 [INF] Attempting to register user with email: arshya_moradi81@yahoo.com
+2025-04-09 21:13:13.566 -04:00 [ERR] Failed to create user arshya_moradi81@yahoo.com:
+2025-04-09 21:13:13.567 -04:00 [ERR] - Username 'arshya_moradi81@yahoo.com' is already taken.
+2025-04-09 21:13:37.018 -04:00 [INF] Attempting to register user with email: arshyamoradi687@gmail.com
+2025-04-09 21:13:37.124 -04:00 [INF] User arshyamoradi687@gmail.com created successfully.
+2025-04-09 21:13:37.132 -04:00 [INF] User arshyamoradi687@gmail.com assigned to RegularUser role.
+2025-04-09 21:13:37.659 -04:00 [ERR] Error sending email to arshyamoradi687@gmail.com: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at WebApplication1.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Comp2139_Assignment\WebApplication1\WebApplication1\Services\EmailService.cs:line 68
+2025-04-09 21:13:37.665 -04:00 [WRN] Failed to send confirmation email to arshyamoradi687@gmail.com.
+2025-04-09 21:21:30.764 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-09 21:21:30.955 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-09 21:21:30.960 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-09 21:21:35.873 -04:00 [INF] User logged out.

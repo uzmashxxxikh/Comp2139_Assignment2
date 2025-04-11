@@ -1,0 +1,5 @@
+2025-04-10 13:12:17.623 -04:00 [INF] Creating new product: AirPods
+2025-04-10 13:12:17.683 -04:00 [WRN] Invalid model state when creating product: AirPods
+2025-04-10 13:12:17.685 -04:00 [WRN] - The Category field is required.
+2025-04-10 13:16:00.257 -04:00 [INF] Creating new product: AirPods
+2025-04-10 13:16:00.545 -04:00 [INF] Product created successfully: AirPods, ID: 7

@@ -1,0 +1,37 @@
+2025-04-10 11:05:43.472 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-10 11:05:43.730 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-10 11:05:43.737 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-10 11:05:45.535 -04:00 [INF] User logged out.
+2025-04-10 11:06:00.930 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-10 11:06:01.023 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-10 11:06:01.029 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-10 11:06:36.927 -04:00 [INF] Creating new product: Phone
+2025-04-10 11:06:36.930 -04:00 [WRN] Invalid model state when creating product: Phone
+2025-04-10 11:06:36.933 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:06:37.935 -04:00 [INF] Creating new product: Phone
+2025-04-10 11:06:37.937 -04:00 [WRN] Invalid model state when creating product: Phone
+2025-04-10 11:06:37.938 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:06:38.874 -04:00 [INF] Creating new product: Phone
+2025-04-10 11:06:38.876 -04:00 [WRN] Invalid model state when creating product: Phone
+2025-04-10 11:06:38.878 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:06:39.793 -04:00 [INF] Creating new product: Phone
+2025-04-10 11:06:39.794 -04:00 [WRN] Invalid model state when creating product: Phone
+2025-04-10 11:06:39.796 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:07:03.788 -04:00 [INF] Creating new product: ddas
+2025-04-10 11:07:03.790 -04:00 [WRN] Invalid model state when creating product: ddas
+2025-04-10 11:07:03.791 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:07:04.700 -04:00 [INF] Creating new product: ddas
+2025-04-10 11:07:04.702 -04:00 [WRN] Invalid model state when creating product: ddas
+2025-04-10 11:07:04.704 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:10:34.424 -04:00 [INF] Creating new product: ICE1
+2025-04-10 11:10:34.490 -04:00 [WRN] Invalid model state when creating product: ICE1
+2025-04-10 11:10:34.493 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:10:35.683 -04:00 [INF] Creating new product: ICE1
+2025-04-10 11:10:35.685 -04:00 [WRN] Invalid model state when creating product: ICE1
+2025-04-10 11:10:35.686 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:10:36.550 -04:00 [INF] Creating new product: ICE1
+2025-04-10 11:10:36.552 -04:00 [WRN] Invalid model state when creating product: ICE1
+2025-04-10 11:10:36.554 -04:00 [WRN] - The Category field is required.
+2025-04-10 11:10:37.445 -04:00 [INF] Creating new product: ICE1
+2025-04-10 11:10:37.447 -04:00 [WRN] Invalid model state when creating product: ICE1
+2025-04-10 11:10:37.448 -04:00 [WRN] - The Category field is required.

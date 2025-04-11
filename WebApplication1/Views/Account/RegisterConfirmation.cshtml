@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Registration Confirmation";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">@ViewData["Title"]</h2>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success">
+                        <h4 class="alert-heading">Thank you for registering!</h4>
+                        <p>Please check your email to confirm your account. The confirmation link will expire in 24 hours.</p>
+                        <hr>
+                        <p class="mb-0">If you don't receive the email within a few minutes, please check your spam folder.</p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

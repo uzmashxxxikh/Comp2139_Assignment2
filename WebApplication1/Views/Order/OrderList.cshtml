@@ -1,0 +1,56 @@
+@model IEnumerable<WebApplication1.Models.Order>
+
+@{
+    ViewData["Title"] = "Your Orders";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="mb-4">Your Orders</h2>
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">
+                    No orders found.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Total Amount</th>
+                                <th>Items</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model)
+                            {
+                                <tr>
+                                    <td>@order.Id</td>
+                                    <td>@order.OrderDate.ToString("g")</td>
+                                    <td>@order.TotalAmount.ToString("C")</td>
+                                    <td>@order.OrderItems.Count</td>
+                                    <td>
+                                        <a asp-action="Track" asp-route-id="@order.Id" class="btn btn-primary btn-sm">
+                                            View Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+
+            <div class="mt-4">
+                <a asp-action="TrackByEmail" class="btn btn-secondary">Track Another Order</a>
+            </div>
+        </div>
+    </div>
+</div> 

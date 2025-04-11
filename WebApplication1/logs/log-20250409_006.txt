@@ -1,0 +1,4 @@
+2025-04-09 21:21:30.764 -04:00 [INF] Login attempt for user: arshiamoradi1203@gmail.com
+2025-04-09 21:21:30.955 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
+2025-04-09 21:21:30.960 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
+2025-04-09 21:21:35.873 -04:00 [INF] User logged out.

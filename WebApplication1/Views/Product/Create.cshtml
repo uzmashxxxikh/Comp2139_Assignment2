@@ -1,0 +1,143 @@
+@model WebApplication1.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h1>Create Product</h1>
+
+<!-- Success Alert (hidden by default) -->
+<div id="successAlert" class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 d-none" role="alert" style="z-index: 1050;">
+    <strong>Success!</strong> Product created successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<!-- Error Alert (hidden by default) -->
+<div id="errorAlert" class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 d-none" role="alert" style="z-index: 1050;">
+    <strong>Error!</strong> <span id="errorMessage"></span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form id="createProductForm" asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CategoryId" class="control-label">Category</label>
+                <select asp-for="CategoryId" class="form-select" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))">
+                    <option value="">-- Select Category --</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="QuantityInStock" class="control-label"></label>
+                <input asp-for="QuantityInStock" class="form-control" type="number" />
+                <span asp-validation-for="QuantityInStock" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="LowStockThreshold" class="control-label"></label>
+                <input asp-for="LowStockThreshold" class="form-control" type="number" />
+                <span asp-validation-for="LowStockThreshold" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-1"></i>Create
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-1"></i>Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="position-fixed top-50 start-50 translate-middle d-none">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function() {
+            function showAlert(alertId, message) {
+                if (message) {
+                    $('#errorMessage').text(message);
+                }
+                $(alertId).removeClass('d-none');
+                setTimeout(function() {
+                    $(alertId).addClass('d-none');
+                }, 3000);
+            }
+
+            $('#createProductForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading spinner
+                $('#loadingSpinner').removeClass('d-none');
+                
+                // Disable submit button
+                $('button[type="submit"]').prop('disabled', true);
+                
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            // Show success alert
+                            showAlert('#successAlert');
+                            // Redirect to index page after a short delay
+                            setTimeout(function() {
+                                window.location.href = '/Product';
+                            }, 1500);
+                        } else {
+                            // Show error message
+                            showAlert('#errorAlert', response.message || 'Validation failed. Please check your input.');
+                            // Re-enable submit button
+                            $('button[type="submit"]').prop('disabled', false);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Show error message
+                        showAlert('#errorAlert', 'An error occurred while creating the product.');
+                        // Re-enable submit button
+                        $('button[type="submit"]').prop('disabled', false);
+                    },
+                    complete: function() {
+                        // Hide loading spinner
+                        $('#loadingSpinner').addClass('d-none');
+                    }
+                });
+            });
+        });
+    </script>
+} 
