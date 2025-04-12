@@ -35,8 +35,15 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
-// Register email service
-builder.Services.AddScoped<IEmailService, EmailService>();
+// ✅ Register email service conditionally
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddScoped<IEmailService, DevEmailService>(); // Use Ethereal email for dev
+}
+else
+{
+    builder.Services.AddScoped<IEmailService, EmailService>(); // Real email for production
+}
 
 // Register order service
 builder.Services.AddScoped<IOrderService, OrderService>();
@@ -60,10 +67,10 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<ApplicationDbContext>();
         var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-        
+
         // Initialize database
         DbInitializer.Initialize(context);
-        
+
         // Initialize roles
         if (!roleManager.RoleExistsAsync("Admin").Result)
         {
@@ -73,7 +80,7 @@ using (var scope = app.Services.CreateScope())
         {
             roleManager.CreateAsync(new IdentityRole("RegularUser")).Wait();
         }
-        
+
         // Initialize admin user
         DbInitializer.InitializeAdminUser(userManager).Wait();
     }

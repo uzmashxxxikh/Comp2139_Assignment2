@@ -448,3 +448,10 @@ C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8
 C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\MailKit.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\MimeKit.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Comp2139_Assignment\New folder\WebApplication1\WebApplication1\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

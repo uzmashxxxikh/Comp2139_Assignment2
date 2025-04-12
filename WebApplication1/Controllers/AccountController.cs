@@ -30,6 +30,14 @@ namespace WebApplication1.Controllers
             _configuration = configuration;
         }
 
+#if DEBUG
+        // This method is only for testing purposes
+        internal IEmailService GetEmailService()
+        {
+            return _emailService;
+        }
+#endif
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -52,7 +60,7 @@ namespace WebApplication1.Controllers
                         FullName = model.FullName,
                         ContactInformation = model.ContactInformation,
                         PreferredCategories = model.PreferredCategories,
-                        EmailConfirmed = false // Email needs to be confirmed
+                        EmailConfirmed = false // Email needs to be verified
                     };
 
                     var result = await _userManager.CreateAsync(user, model.Password);
@@ -76,39 +84,26 @@ namespace WebApplication1.Controllers
                             }
                         }
 
-                        // Generate email confirmation token
-                        var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                        
-                        // Create a simple callback URL for testing purposes
-                        string callbackUrl;
-                        if (Url != null)
-                        {
-                            callbackUrl = Url.Action(
-                                "ConfirmEmail",
-                                "Account",
-                                new { userId = user.Id, code = code },
-                                protocol: Request.Scheme);
-                        }
-                        else
-                        {
-                            // Fallback for testing
-                            callbackUrl = $"http://localhost/Account/ConfirmEmail?userId={user.Id}&code={code}";
-                        }
+                        // Generate email verification token
+                        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        var confirmationLink = Url.Action("VerifyEmail", "Account",
+                            new { userId = user.Id, token = token }, Request.Scheme);
 
-                        // Send confirmation email
+                        // Send verification email
                         var emailSent = await _emailService.SendEmailConfirmationAsync(
                             model.Email,
-                            HtmlEncoder.Default.Encode(callbackUrl));
+                            HtmlEncoder.Default.Encode(confirmationLink));
 
                         if (emailSent)
                         {
-                            _logger.LogInformation($"Confirmation email sent to {model.Email}.");
-                            return RedirectToAction(nameof(RegisterConfirmation));
+                            _logger.LogInformation($"Verification email sent to {model.Email}.");
+                            TempData["SuccessMessage"] = "Registration successful! Please check your email to verify your account.";
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
-                            _logger.LogError($"Failed to send confirmation email to {model.Email}.");
-                            ModelState.AddModelError(string.Empty, "Failed to send confirmation email. Please try again later.");
+                            _logger.LogError($"Failed to send verification email to {model.Email}.");
+                            ModelState.AddModelError(string.Empty, "Failed to send verification email. Please try again later.");
                             return View(model);
                         }
                     }
@@ -151,9 +146,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        public async Task<IActionResult> VerifyEmail(string userId, string token)
         {
-            if (userId == null || code == null)
+            if (userId == null || token == null)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -161,24 +156,26 @@ namespace WebApplication1.Controllers
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                _logger.LogError($"User with ID {userId} not found during email confirmation.");
+                _logger.LogError($"User with ID {userId} not found during email verification.");
                 return NotFound($"Unable to load user with ID '{userId}'.");
             }
 
-            var result = await _userManager.ConfirmEmailAsync(user, code);
+            var result = await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Email confirmed for user {user.Email}.");
-                return View("ConfirmEmail");
+                _logger.LogInformation($"Email verified for user {user.Email}.");
+                TempData["SuccessMessage"] = "Email verified successfully! You can now log in.";
+                return RedirectToAction("Login");
             }
             else
             {
-                _logger.LogError($"Failed to confirm email for user {user.Email}:");
+                _logger.LogError($"Failed to verify email for user {user.Email}:");
                 foreach (var error in result.Errors)
                 {
                     _logger.LogError($"- {error.Description}");
                 }
-                return View("Error");
+                TempData["ErrorMessage"] = "Error verifying your email. Please try again.";
+                return RedirectToAction("Index", "Home");
             }
         }
 

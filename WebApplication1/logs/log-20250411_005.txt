@@ -1,0 +1,16 @@
+2025-04-11 18:48:16.299 -04:00 [INF] Attempting to register user with email: arshia.moradi@georgebrown.ca
+2025-04-11 18:48:16.527 -04:00 [ERR] Failed to create user arshia.moradi@georgebrown.ca:
+2025-04-11 18:48:16.529 -04:00 [ERR] - Username 'arshia.moradi@georgebrown.ca' is already taken.
+2025-04-11 18:48:50.939 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-11 18:48:51.094 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-11 18:48:51.099 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-11 18:49:01.631 -04:00 [INF] User logged out.
+2025-04-11 19:35:36.475 -04:00 [INF] Login attempt for user: admin@example.com
+2025-04-11 19:35:36.671 -04:00 [INF] User admin@example.com logged in successfully.
+2025-04-11 19:35:36.676 -04:00 [INF] User admin@example.com has Admin role: True
+2025-04-11 19:35:54.538 -04:00 [INF] User logged out.
+2025-04-11 19:36:37.596 -04:00 [INF] Attempting to register user with email: arshia456@yahoo.com
+2025-04-11 19:36:37.769 -04:00 [INF] User arshia456@yahoo.com created successfully.
+2025-04-11 19:36:37.838 -04:00 [INF] User arshia456@yahoo.com assigned to RegularUser role.
+2025-04-11 19:36:37.847 -04:00 [ERR] SMTP settings are not properly configured
+2025-04-11 19:36:37.849 -04:00 [ERR] Failed to send verification email to arshia456@yahoo.com.

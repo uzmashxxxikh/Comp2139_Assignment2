@@ -5,3 +5,6 @@
 2025-04-11 14:29:08.799 -04:00 [INF] User arshiamoradi1203@gmail.com logged in successfully.
 2025-04-11 14:29:08.804 -04:00 [INF] User arshiamoradi1203@gmail.com has Admin role: False
 2025-04-11 14:29:14.734 -04:00 [INF] User logged out.
+2025-04-11 14:56:01.636 -04:00 [INF] Attempting to register user with email: venomfate81@yahoo.com
+2025-04-11 14:56:01.894 -04:00 [ERR] Failed to create user venomfate81@yahoo.com:
+2025-04-11 14:56:01.896 -04:00 [ERR] - Username 'venomfate81@yahoo.com' is already taken.

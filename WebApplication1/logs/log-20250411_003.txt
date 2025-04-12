@@ -1,0 +1,8 @@
+2025-04-11 14:56:01.636 -04:00 [INF] Attempting to register user with email: venomfate81@yahoo.com
+2025-04-11 14:56:01.894 -04:00 [ERR] Failed to create user venomfate81@yahoo.com:
+2025-04-11 14:56:01.896 -04:00 [ERR] - Username 'venomfate81@yahoo.com' is already taken.
+2025-04-11 18:39:38.500 -04:00 [INF] Attempting to register user with email: arshia.moradi@georgebrown.ca
+2025-04-11 18:39:38.866 -04:00 [INF] User arshia.moradi@georgebrown.ca created successfully.
+2025-04-11 18:39:38.945 -04:00 [INF] User arshia.moradi@georgebrown.ca assigned to RegularUser role.
+2025-04-11 18:39:38.957 -04:00 [ERR] SMTP settings are not properly configured
+2025-04-11 18:39:38.959 -04:00 [ERR] Failed to send verification email to arshia.moradi@georgebrown.ca.

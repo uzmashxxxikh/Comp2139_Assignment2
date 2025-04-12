@@ -1,0 +1,13 @@
+2025-04-11 20:59:01.804 -04:00 [INF] Attempting to register user with email: magdalen.bauch@ethereal.email
+2025-04-11 20:59:01.887 -04:00 [ERR] Failed to create user magdalen.bauch@ethereal.email:
+2025-04-11 20:59:01.890 -04:00 [ERR] - Passwords must have at least one non alphanumeric character.
+2025-04-11 20:59:40.353 -04:00 [INF] Attempting to register user with email: magdalen.bauch@ethereal.email
+2025-04-11 20:59:40.678 -04:00 [INF] User magdalen.bauch@ethereal.email created successfully.
+2025-04-11 20:59:40.762 -04:00 [INF] User magdalen.bauch@ethereal.email assigned to RegularUser role.
+2025-04-11 20:59:43.393 -04:00 [INF] 📨 Dev email sent to magdalen.bauch@ethereal.email
+2025-04-11 20:59:43.397 -04:00 [INF] Verification email sent to magdalen.bauch@ethereal.email.
+2025-04-11 21:00:36.504 -04:00 [INF] Email verified for user magdalen.bauch@ethereal.email.
+2025-04-11 21:00:39.140 -04:00 [INF] Login attempt for user: magdalen.bauch@ethereal.email
+2025-04-11 21:00:39.286 -04:00 [INF] User magdalen.bauch@ethereal.email logged in successfully.
+2025-04-11 21:00:39.291 -04:00 [INF] User magdalen.bauch@ethereal.email has Admin role: False
+2025-04-11 21:01:33.733 -04:00 [INF] User logged out.
